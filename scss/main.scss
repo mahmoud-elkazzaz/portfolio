@@ -1,10 +1,10 @@
-@import 'config';
-@import 'home';
-@import 'menu';
-@import 'career';
-@import 'projects';
-@import 'contact';
-@import 'responsive';
+@import "config";
+@import "home";
+@import "menu";
+@import "career";
+@import "projects";
+@import "contact";
+@import "responsive";
 
 * {
   margin: 0;
@@ -16,9 +16,12 @@ body {
   background: $primary-color;
   color: white;
   line-height: 1;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 400;
 }
 
@@ -46,7 +49,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   background-color: $primary-color;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .social-icons {
