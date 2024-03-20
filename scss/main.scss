@@ -1,15 +1,20 @@
 @import 'config';
 @import 'home';
 @import 'menu';
-@import 'about';
+@import 'career';
 @import 'projects';
 @import 'contact';
 @import 'responsive';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: $primary-color;
   color: white;
-  height: 100vh;
   line-height: 1;
 }
 
@@ -33,33 +38,19 @@ header {
   padding: 1rem;
 }
 
-main {
-  height: 100%;
+footer {
+  display: flex;
+  position: fixed;
   width: 100%;
-
-  .social-icons {
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-
-    a {
-      padding: 0.1rem;
-      @include transition-ease;
-
-      &:hover {
-        color: $secondary-color;
-      }
-
-    }
-  }
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 10px 20px;
 }
 
-footer {
-  font-size: 1rem;
-  position: fixed;
-  bottom: 0.4rem;
-  right: 1rem;
-  text-align: right;
-  padding: 1rem;
-  color: #fff;
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 121px;
 }
