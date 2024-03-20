@@ -20,7 +20,6 @@
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background-color: black;
   margin: auto;
   background-image: url("../img/mahmoud.jpg");
   background-size: cover;
@@ -124,7 +123,7 @@
 .nav {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   opacity: 0.98;
   visibility: hidden;
@@ -156,7 +155,7 @@
   transform: translateX(0);
 }
 .nav-menu_item.active > a {
-  color: #d8d8d8;
+  font-weight: 550;
 }
 .nav-menu_link {
   display: inline-block;
@@ -183,60 +182,78 @@
   transition-delay: 0.55s;
 }
 
-.about {
-  padding-top: 25vh;
+.career {
+  padding-top: 15vh;
+  background-color: #d8d8d8;
+  font-size: 30px;
 }
-.about-bio {
-  width: 80%;
+.career__main {
+  background-color: #d8d8d8;
+}
+.career__bio {
+  width: 95%;
   margin: auto;
   text-align: center;
+  color: #04044e;
 }
-.about .jobs {
-  width: 80%;
-  margin: 100px auto 100px auto;
+@media screen and (min-width: 1024px) {
+  .career__bio {
+    width: 70%;
+  }
+}
+.career__job {
+  background: lightgray;
+  color: #04044e;
+  padding: 20px;
+  border-bottom: 5px solid #04044e;
+}
+.career__job__container {
+  width: 95%;
+  margin: 50px auto 0 auto;
+  padding-bottom: 150px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
-.about .jobs-job {
-  background: #06067f;
-  padding: 0.5rem;
-  border-bottom: 5px solid #d8d8d8;
+@media screen and (min-width: 1024px) {
+  .career__job__container {
+    width: 70%;
+  }
 }
-.about .jobs-job h2,
-.about .jobs-job h3 {
+.career__job h2,
+.career__job h3 {
   margin: 0.5rem 0;
 }
-.about .jobs-job h6 {
+.career__job h6 {
   margin: 0.3rem 0;
 }
+.career__job__description {
+  margin: 10px 0 0 25px;
+}
+.career__job__description--marginBottom {
+  margin-bottom: 30px;
+}
+.career__job__description > li {
+  margin-bottom: 5px;
+}
 
-#projects_main {
+.project__main {
   min-height: 100vh;
-  padding-top: 10vh;
-  text-align: center;
 }
-
-.projects {
-  padding-bottom: 100px;
-  height: 100%;
-}
-.projects-items {
-  width: 90%;
+.project__item__grid {
   display: grid;
+  padding: 15vh 0;
+  width: 90%;
+  margin: auto;
   gap: 2rem;
-  margin: 50px auto;
 }
-.projects-img {
-  width: 100%;
-}
-.projects-item {
+.project__item__container {
   position: relative;
-  border-bottom: 5px solid #d8d8d8;
+  border-bottom: 5px solid #04044e;
   overflow: hidden;
   cursor: pointer;
 }
-.projects-item::after {
+.project__item__container::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -247,14 +264,44 @@
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
-.projects-item:hover::after {
+.project__item__container:hover::after {
   top: 0;
   opacity: 0.9;
 }
-.projects-item:hover .projects-btn {
+.project__item__container:hover .project__item__btn {
   opacity: 1;
 }
-.projects-btns {
+.project__item__title {
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+  padding: 20px;
+  font-size: 36px;
+  color: #d8d8d8;
+  background-color: #04044e;
+}
+.project__item__img {
+  max-width: 100%;
+}
+.project__item__btn {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+@media screen and (min-width: 1600px) {
+  .project__item__btn {
+    font-size: 1.5rem;
+  }
+}
+.project__item__btn > i {
+  margin-right: 10px;
+}
+.project__item__btn:hover {
+  color: #000;
+}
+.project__item__btn__container {
   position: absolute;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -265,25 +312,6 @@
   width: 100%;
   z-index: 1;
 }
-.projects-btn {
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #000;
-}
-@media screen and (min-width: 1600px) {
-  .projects-btn {
-    font-size: 1.5rem;
-  }
-}
-.projects-btn > i {
-  margin-right: 10px;
-}
-.projects-btn:hover {
-  color: #fff;
-}
 
 .contact {
   height: 100%;
@@ -292,6 +320,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #04044e;
 }
 .contact h2 {
   font-size: 3rem;
@@ -326,33 +355,27 @@
     font-size: 2rem;
     color: #04044e;
   }
-  .about-bio {
-    font-size: 1.5rem;
-  }
-  .projects-bio_img {
-    height: 40vh;
-  }
-  .projects-items {
+  .project__item__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .projects .text-secondary {
-    font-size: 3rem;
+  .project__item__img {
+    height: 40vh;
   }
   .contact-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 1024px) {
-  .projects-items {
-    grid-template-columns: repeat(3, 1fr);
+  .project__item__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .projects-bio_img {
+  .project__item__img {
     height: 50vh;
   }
 }
 @media screen and (min-width: 1600px) {
-  .projects-bio_img {
-    height: 50vh;
+  .project__item__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 * {
@@ -362,7 +385,7 @@
 }
 
 body {
-  background: #04044e;
+  background: #d8d8d8;
   color: white;
   line-height: 1;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -405,6 +428,15 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 121px;
+}
+
+.navLinksScroll {
+  color: #d8d8d8;
+}
+
+.navMenuScroll {
+  background-color: #04044e;
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=main.css.map */

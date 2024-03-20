@@ -1,80 +1,86 @@
-#projects_main {
-  min-height: 100vh;
-  padding-top: 10vh;
-  text-align: center;
-}
-.projects {
-  padding-bottom: 100px;
-  height: 100%;
-
-  &-items {
-    width: 90%;
-    display: grid;
-    gap: 2rem;
-    margin: 50px auto;
+.project {
+  &__main {
+    min-height: 100vh;
   }
-
-  &-img {
-    width: 100%;
-  }
-
-  &-item {
-    position: relative;
-    border-bottom: 5px solid $secondary-color;
-    overflow: hidden;
-    cursor: pointer;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: $secondary-color;
-      opacity: 0;
-      @include transition-ease;
+  &__item {
+    &__grid {
+      display: grid;
+      padding: 15vh 0;
+      width: 90%;
+      margin: auto;
+      gap: 2rem;
     }
 
-    &:hover {
+    &__container {
+      position: relative;
+      border-bottom: 5px solid $primary-color;
+      overflow: hidden;
+      cursor: pointer;
+
       &::after {
-        top: 0;
-        opacity: 0.9;
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $secondary-color;
+        opacity: 0;
+        @include transition-ease;
       }
 
-      .projects-btn {
-        opacity: 1;
+      &:hover {
+        &::after {
+          top: 0;
+          opacity: 0.9;
+        }
+
+        .project__item__btn {
+          opacity: 1;
+        }
       }
     }
-  }
 
-  &-btns {
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-  }
+    &__title {
+      border-radius: 15px 15px 0 0;
+      text-align: center;
+      padding: 20px;
+      font-size: 36px;
+      color: $secondary-color;
+      background-color: $primary-color;
+    }
 
-  &-btn {
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: set-text-color($secondary-color);
-    @include media-xl {
-      font-size: 1.5rem
+    &__img {
+      max-width: 100%;
     }
-    & > i {
-      margin-right: 10px;
-    }
-    &:hover {
+
+    &__btn {
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
       color: set-text-color(set-text-color($secondary-color));
+      @include media-xl {
+        font-size: 1.5rem;
+      }
+      & > i {
+        margin-right: 10px;
+      }
+      &:hover {
+        color: set-text-color(set-text-color($primary-color));
+      }
+      &__container {
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+      }
     }
   }
 }

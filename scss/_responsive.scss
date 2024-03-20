@@ -25,21 +25,11 @@
     }
   }
 
-  .about-bio {
-    font-size: 1.5rem;
+  .project__item__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .projects {
-    &-bio_img {
-      height: 40vh;
-    }
-    &-items {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .text-secondary {
-      font-size: 3rem;
-    }
+  .project__item__img {
+    height: 40vh;
   }
   .contact-list {
     grid-template-columns: repeat(3, 1fr);
@@ -47,18 +37,16 @@
 }
 
 @include media-lg {
-  .projects {
-      &-items {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    &-bio_img {
-      height: 50vh;
-    }
+  .project__item__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project__item__img {
+    height: 50vh;
   }
 }
 
 @include media-xl {
-  .projects-bio_img {
-    height: 50vh;
+  .project__item__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

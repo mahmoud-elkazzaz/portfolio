@@ -56,11 +56,10 @@
 .nav {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   opacity: 0.98;
   visibility: hidden;
-
   &.open {
     visibility: visible;
   }
@@ -85,13 +84,12 @@
     &_item {
       transform: translateX(100vw);
       @include transition-ease;
-
       &.open {
         transform: translateX(0);
       }
 
       &.active > a {
-        color: $secondary-color;
+        font-weight: 550;
       }
     }
     &_link {

@@ -13,7 +13,7 @@
 }
 
 body {
-  background: $primary-color;
+  background: $secondary-color;
   color: white;
   line-height: 1;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -56,4 +56,13 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 121px;
+}
+
+.navLinksScroll {
+  color: $secondary-color;
+}
+
+.navMenuScroll {
+  background-color: $primary-color;
+  opacity: 0.9;
 }
