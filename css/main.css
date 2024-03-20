@@ -280,7 +280,7 @@
   background-color: #04044e;
 }
 .project__item__img {
-  max-width: 100%;
+  width: 100%;
 }
 .project__item__btn {
   opacity: 0;
@@ -400,10 +400,6 @@ h3 {
 a {
   color: white;
   text-decoration: none;
-}
-
-.text-secondary {
-  color: #d8d8d8;
 }
 
 header {
